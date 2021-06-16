@@ -43,9 +43,7 @@ ifeq ($(CONFIG_MTK_CONN_LTE_IDC_SUPPORT),y)
 else
     ccflags-y += -D WMT_IDC_SUPPORT=0
 endif
-$(warning yumin: common 1)
 ccflags-y += -D MTK_WCN_WMT_STP_EXP_SYMBOL_ABSTRACT
-$(warning yumin: common 2)
 
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/include
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat/$(MTK_PLATFORM)/include
@@ -110,10 +108,8 @@ endif
 ###############################################################################
 MODULE_NAME := wmt_drv
 ifeq ($(CONFIG_WLAN_DRV_BUILD_IN),y)
-$(warning $(MODULE_NAME) build-in boot.img)
 obj-y += $(MODULE_NAME).o
 else
-$(warning $(MODULE_NAME) is kernel module)
 obj-m += $(MODULE_NAME).o
 endif
 
